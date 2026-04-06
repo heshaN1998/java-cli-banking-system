@@ -62,4 +62,41 @@ public class Main {
         scanner.close();
 
     }
+    private static void createAccount(Scanner scanner,Bank bank){
+        System.out.println("Enter account holder name:");
+        String name=scanner.nextLine();
+
+        if (name.trim().isEmpty()){
+            System.out.println("Account holder name cannot be empty ");
+            return;
+        }
+        BankAccount newAccount=bank.createAccount(name);
+        System.out.println("Account created successfully ");
+        System.out.println("Account Number: "+newAccount.getAccountNumber());
+        System.out.println("Account Holder: "+newAccount.getAccountHolderName());
+    }
+
+    private static void deposit(Scanner scanner,Bank bank){
+        System.out.println("Enter account number: ");
+        String accountNumber=scanner.nextLine();
+
+        System.out.println("Enter deposit amount: ");
+        double amount=Double.parseDouble(scanner.nextLine());
+
+        bank.depositToAccount(accountNumber,amount);
+        System.out.println("Deposit successful ");
+    }
+    private static void withdraw(Scanner scanner,Bank bank){
+         System.out.println("Enter account number");
+         String accountNumber=scanner.nextLine();
+
+        System.out.println("Enter withdrawal amount");
+        double amount =Double.parseDouble(scanner.nextLine());
+
+        bank.withdrwFromAccount(accountNumber,amount);
+        System.out.println("Withdrawal successfully");
+}
+
+
+
 }

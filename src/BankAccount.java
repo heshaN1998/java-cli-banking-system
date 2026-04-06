@@ -33,7 +33,7 @@ public class BankAccount {
             throw new IllegalArgumentException("Deposit must be greater than zero");
         }
         balance=balance+amount;
-        transactions.add(new Transaction("Deposit",amount,"Amount deposited"));
+        transactions.add(new Transaction("DEPOSIT",amount,"Amount deposited"));
     }
 
     public void withdraw(double amount){
