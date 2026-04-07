@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -43,7 +42,7 @@ public class Main {
                         viewTransactionHistory(scanner, bank);
                         break;
                     case 7:
-                        bank.showAllAccount();
+                        bank.showAllAccounts();
                         break;
                     case 8:
                         running = false;
@@ -62,41 +61,69 @@ public class Main {
         scanner.close();
 
     }
-    private static void createAccount(Scanner scanner,Bank bank){
-        System.out.println("Enter account holder name:");
-        String name=scanner.nextLine();
 
-        if (name.trim().isEmpty()){
+    private static void createAccount(Scanner scanner, Bank bank) {
+        System.out.println("Enter account holder name:");
+        String name = scanner.nextLine();
+
+        if (name.trim().isEmpty()) {
             System.out.println("Account holder name cannot be empty ");
             return;
         }
-        BankAccount newAccount=bank.createAccount(name);
+        BankAccount newAccount = bank.createAccount(name);
         System.out.println("Account created successfully ");
-        System.out.println("Account Number: "+newAccount.getAccountNumber());
-        System.out.println("Account Holder: "+newAccount.getAccountHolderName());
+        System.out.println("Account Number: " + newAccount.getAccountNumber());
+        System.out.println("Account Holder: " + newAccount.getAccountHolderName());
     }
 
-    private static void deposit(Scanner scanner,Bank bank){
+    private static void deposit(Scanner scanner, Bank bank) {
         System.out.println("Enter account number: ");
-        String accountNumber=scanner.nextLine();
+        String accountNumber = scanner.nextLine();
 
         System.out.println("Enter deposit amount: ");
-        double amount=Double.parseDouble(scanner.nextLine());
+        double amount = Double.parseDouble(scanner.nextLine());
 
-        bank.depositToAccount(accountNumber,amount);
+        bank.depositToAccount(accountNumber, amount);
         System.out.println("Deposit successful ");
     }
-    private static void withdraw(Scanner scanner,Bank bank){
-         System.out.println("Enter account number");
-         String accountNumber=scanner.nextLine();
+
+    private static void withdraw(Scanner scanner, Bank bank) {
+        System.out.println("Enter account number");
+        String accountNumber = scanner.nextLine();
 
         System.out.println("Enter withdrawal amount");
-        double amount =Double.parseDouble(scanner.nextLine());
+        double amount = Double.parseDouble(scanner.nextLine());
 
-        bank.withdrwFromAccount(accountNumber,amount);
+
+        bank.withdrwFromAccount(accountNumber, amount);
         System.out.println("Withdrawal successfully");
+    }
+
+    private static void transfer(Scanner scanner, Bank bank) {
+        System.out.println("Enter sender account number: ");
+        String fromAccount = scanner.nextLine();
+
+        System.out.println("Enter receiver account number: ");
+        String toAccount = scanner.nextLine();
+
+        System.out.println("Enter transfer amount: ");
+        double amount = Double.parseDouble(scanner.nextLine());
+
+        bank.transferBetweenAccount(fromAccount, toAccount, amount);
+        System.out.println("Transfer successful. ");
+
+    }
+
+    private static void checkBalance(Scanner scanner,Bank bank){
+        System.out.println("check balance");
+    }
+
+    private static void viewTransactionHistory(Scanner scanner,Bank bank){
+        System.out.println("view transaction history");
+    }
+
 }
 
 
 
-}
+

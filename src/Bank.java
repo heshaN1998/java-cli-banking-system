@@ -38,7 +38,7 @@ public class Bank {
         account.deposit(amount);
     }
 
-    public void transferBetweenAccount(String fromAccountNumber, String toAccount, double ammount) {
+    public void transferBetweenAccount(String fromAccountNumber, String toAccount, double amount) {
         BankAccount sender = findAccount(fromAccountNumber);
         BankAccount receiver = findAccount(toAccount);
 
@@ -48,10 +48,10 @@ public class Bank {
         if (receiver == null) {
             throw new IllegalArgumentException("Receiver account not found");
         }
-        sender.transfer(receiver, ammount);
+        sender.transfer(receiver, amount);
     }
 
-    public void showAllAccoints() {
+    public void showAllAccounts() {
         if (accounts.isEmpty()) {
             System.out.println("No account available");
             return;
