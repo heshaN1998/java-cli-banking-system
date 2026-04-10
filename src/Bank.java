@@ -8,7 +8,7 @@ public class Bank {
 
     public Bank() {
         this.accounts = new HashMap<>();
-        this.accuntCounter -= 1001;
+        this.accuntCounter = 1001000100;
     }
 
     public BankAccount createAccount(String accounHolderName) {
@@ -22,7 +22,7 @@ public class Bank {
         return accounts.get(accountNumber);
     }
 
-    public void withdrwFromAccount(String accountNumber, double amount) {
+    public void withdrawFromAccount(String accountNumber, double amount) {
         BankAccount account = findAccount(accountNumber);
         if (account == null) {
             throw new IllegalArgumentException("Account not found");

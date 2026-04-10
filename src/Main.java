@@ -95,7 +95,7 @@ public class Main {
         double amount = Double.parseDouble(scanner.nextLine());
 
 
-        bank.withdrwFromAccount(accountNumber, amount);
+        bank.withdrawFromAccount(accountNumber, amount);
         System.out.println("Withdrawal successfully");
     }
 
