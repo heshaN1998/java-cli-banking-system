@@ -1,0 +1,1 @@
+A command-line banking system built in Java using OOP principles such as abstraction, inheritance, and polymorphism. The application supports savings and current accounts, deposits, withdrawals, transfers, and transaction history management using the Java Collections Framework.
